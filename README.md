@@ -93,4 +93,6 @@ return (
 )
 ```
 
-***Note: the data and variable names were written as generic as possible, feel free to name them around the data resource you would be using***
+***Note:***
+- ***the data and variable names were written as generic as possible, feel free to name them around the data resource you would be using***
+- ***the `console.log()` present on every `Layer` component are there to show as long as the component is a child of the `Context.Provider`, you will have access to global state.
