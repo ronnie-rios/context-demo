@@ -39,6 +39,7 @@ function DataProvider({ children }) {
     })
     //these are the values that will be fed to each of the components that are wrapped around the provider
     return (
+        //call the context object you created, in this case its named DataContext
         <DataContext.Provider value={{
             //the state that we created in the component, we use this because we want it to update
             data: data, //state itself
