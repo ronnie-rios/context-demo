@@ -27,7 +27,7 @@ const DataContext = createContext({
 })
 ```
 
-2. put any value you like on your context provider using the `value` prop, make sure to wrap this `.PROVIDER` around the children
+2. Create a **PROVIDER**, it's a function that returns your `CONTEXT.PROVIDER`. put any value you like on your context provider using the `value` prop, make sure to wrap this `.PROVIDER` around the children
 
 ### example from this repo:
 ```js
@@ -51,7 +51,7 @@ function DataProvider({ children }) {
 //export it out
 export { DataContext, DataProvider }
 ```
-3. take your created context and wrap the context provider around your component tree
+3. take your created context and wrap the context provider around your component tree. this gives **ALL** the components and its children components, i.e. nested components will have access to the **GLOBAL STATE**
 
 ```js
 import Layer1 from './components/Layer1'
