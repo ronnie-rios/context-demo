@@ -12,6 +12,7 @@ const Layer4 = () => {
     //setName from the context file, overrides the global state, and will refresh with the updated
     setName({ ...name, name: layerFourState });
   };
+  //it's an obj with the name property, and we are setting its key to this local state's input
 
   return (
     <div>
