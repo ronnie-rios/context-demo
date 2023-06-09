@@ -2,10 +2,11 @@
 import { createContext, useState } from "react";
 
 const DataContext = createContext({
-    name: 'kangaroos',
+    name: 'kangaroos', 
     setName: () => {}
 })
-
+//default value
+ //function that we call to update
 function DataProvider({ children }) {
     const [data, setData] = useState({
         name: 'kangaroos'

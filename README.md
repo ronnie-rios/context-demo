@@ -24,7 +24,7 @@ React context is awesome, do I still need props? It is awesome, but it's not the
 Here are some examples:
 - Simple and Local State: If the state you need to manage is simple and limited to a specific component, just use `useState`
 - Performance: It's not designed for data that changes often, when frequent state changes occur, it re-renders all the components consuming the context. 
-- Small Number of Components: If you need to pass sate down a few levels, manually passing props is more straightforward than creating and maintaing a context provider and cosumer.
+- Small Number of Components: If you need to pass sate down a few levels, manually passing props is more straightforward than creating and maintaining a context provider and cosumer.
 - If you use React Context it can also reduce the reusability of components and lead to more complex and harder to maintain.
 
 Keep in mind the use cases for your app and what you need to accomplish. There are plenty more pros and cons for React Context.
@@ -33,7 +33,7 @@ Keep in mind the use cases for your app and what you need to accomplish. There a
 
 ## Step 1 - creating the context
 
-1. create context using the `createContext` function, pass in the data you want to be used as global state. In this instance, we have an object that has the data we will be manpilating, the `name`, and an empty function, called `setName`. 
+1. create context using the `createContext` function, pass in the data you want to be used as global state. In this instance, we have an object that has the data we will be manipulating, the `name`, and an empty function, called `setName`. 
 
 * Note: the reason for `setName: () => {}`, it's intially defined as an empty func in the context when created, but within the `DataProvider` we implement the a named function that will be set as the value to the `setName` func in the `Provider` we will create in the next step.
 
@@ -111,6 +111,11 @@ function App() {
   );
 }
 ```
+
+## Diagram of the Component Tree
+
+![Diagram](./img/appdiagram.png)
+
 ## Step 4 - using the context
 
 4. Read that value within any component by using the ***the context hook***
@@ -162,7 +167,7 @@ const [layerFourState, setLayerFourState] = useState(name);
 ```
 - `setName` is the function obtained from the context file, which is used to override the global state.
 - The `setName` function is called with a new object that spreads the existing name state and updates the `name` property with the value of `layerFourState`.
-- By calling `setName`, the global state will be refreshed with the updated value of the `name` property.
+- By calling `setName`, the global state will be re-rendered with the updated value of the `name` property.
 
 
 ## Use this project

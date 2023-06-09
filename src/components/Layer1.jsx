@@ -6,7 +6,9 @@ import { useNavigate } from 'react-router-dom';
 
 const Layer1 = () => {
   const dataFromContext = useContext(DataContext);
+  
   const { name } = dataFromContext;
+  console.log(name);
   const navigate = useNavigate()
   // console.log(name,  'from layer1');
   return (
