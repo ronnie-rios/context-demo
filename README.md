@@ -109,6 +109,7 @@ function App() {
       </DataProvider>
     </>
   );
+}
 ```
 ## Step 4 - using the context
 
