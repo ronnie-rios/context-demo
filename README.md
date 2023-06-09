@@ -164,11 +164,6 @@ const [layerFourState, setLayerFourState] = useState(name);
 - By calling `setName`, the global state will be refreshed with the updated value of the `name` property.
 
 
-##  Why the naming conventions? 
-- the data and variable names were written as generic as possible in the `context.jsx` file, feel free to name them around the data resource you would be using.
--  The `Layer` components are named  to show you will have access to global state no matter where the component exists in the component tree.
-- I don't have any rhyme or reason why I set the intial value to `kangaroos`. 
-
 ## Use this project
 1. clone down this project to your machine
 1. open your terminal
@@ -183,4 +178,10 @@ This React projected was created with Vite. [Vite Docs](https://vitejs.dev/)
 
 
 ## Questions? Comments?
-If you have any questions, feedback, or suggestions, please feel free to reach out to me via email at ronniemarkrios@gmail.com. You can also open an issue on the project's repository on GitHub here.
+If you have any questions, feedback, or suggestions, please feel free to reach out to me via email at ronniemarkrios@gmail.com. You can also open an issue on the project's repository on GitHub here. I had a lot of fun creating this project, writing about React Context, and explaining it to new developers
+
+
+##  Why the naming conventions? 
+- the data and variable names were written as generic as possible in the `context.jsx` file, feel free to name them around the data resource you would be using.
+-  The `Layer` components are named  to show you will have access to global state no matter where the component exists in the component tree.
+- I don't have any rhyme or reason why I set the intial value to `kangaroos`. 
