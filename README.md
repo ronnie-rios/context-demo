@@ -1,3 +1,5 @@
+
+
 ## useContext
 
 - react context is a way to manage state globally, it can be used with the `useState` hook to share state between deeply nested components more easily than with `useState` alone

@@ -3,18 +3,15 @@ import { useContext } from "react";
 import { DataContext } from "../context/context";
 const Layer4 = () => {
   const dataFromContext = useContext(DataContext);
-  console.log(dataFromContext, "from layer4");
-  const { data, setData } = dataFromContext;
-  console.log(data, "from layer4");
-  
-  const [layerFourState, setLayerFourState] = useState({
-    data: data
-  });
+  const { name, setName } = dataFromContext;
 
-  const handleSubmit = e => {
+  const [layerFourState, setLayerFourState] = useState(name);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setData(layerFourState)
-  }
+    //setName from the context file, overrides the global state, and will refresh with the updated
+    setName({ ...name, name: layerFourState });
+  };
 
   return (
     <div>

@@ -3,12 +3,9 @@ import { DataContext } from '../context/context';
 import Layer4 from './Layer4'
 
 const Layer3 = () => {
-    const dataFromContext = useContext(DataContext);
-    console.log(dataFromContext, 'from layer2');
-    const { data } = dataFromContext
-    console.log(data, 'from layer2');
+   
   return (
-    <div>Layer3 data from context = {data}
+    <div>Layer3 data from context = 
         <Layer4 />
     </div>
   )
