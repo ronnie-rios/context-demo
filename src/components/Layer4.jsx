@@ -9,7 +9,7 @@ const Layer4 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //setName from the context file, overrides the global state, and will refresh with the updated
+    // setName from the context file, overrides the global state, and updates the 'name' property with the value of 'layerFourState'
     setName({ ...name, name: layerFourState });
   };
   //it's an obj with the name property, and we are setting its key to this local state's input
