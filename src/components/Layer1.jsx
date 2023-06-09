@@ -10,12 +10,15 @@ const Layer1 = () => {
   const navigate = useNavigate()
   // console.log(name,  'from layer1');
   return (
-    <div>
+    <section>
       Layer1 data from context = {name.name}
-      <button onClick={()=>navigate('/layer3')}>Go to layer3</button>
-      <Layer2 />
+      <div>
+        <button onClick={()=>navigate('/layer3')}>Go to layer3</button>
+      </div>
+      <h3>Two components live on layer 2</h3>
       <Layer2neighbor />
-    </div>
+      <Layer2 />
+    </section>
   );
 };
 

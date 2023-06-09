@@ -7,7 +7,9 @@ const Layer2 = () => {
   const dataFromContext = useContext(DataContext);
   const { name } = dataFromContext;
   return (
-    <div>Layer2 data from context = {name.name}
+    <div>
+      
+      <p>Layer2 data from context = {name.name}</p>
         <Layer4 />
     </div>
   )
