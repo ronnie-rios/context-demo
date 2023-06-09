@@ -31,7 +31,7 @@ Keep in mind the use cases for your app and what you need to accomplish. There a
 
 ## Setting up Context
 
-### Step 1 - creating the context
+## Step 1 - creating the context
 
 1. create context using the `createContext` function, pass in the data you want to be used as global state. In this instance, we have an object that has the data we will be manpilating, the `name`, and an empty function, called `setName`. 
 
@@ -48,7 +48,7 @@ const DataContext = createContext({
     setName: () => {}
 })
 ```
-### Step 2 - creating the provider
+## Step 2 - creating the provider
 
 2. Create a **PROVIDER**, it's a function that returns your `CONTEXT.PROVIDER`. put any value you like on your context provider using the `value` prop, make sure to wrap this `.PROVIDER` around the children
 
