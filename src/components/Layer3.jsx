@@ -8,7 +8,7 @@ const Layer3 = () => {
   const navigate = useNavigate();
   return (
     <div>
-      Layer 3 is on a different page still has access to the context ={" "}
+      Layer 3 is on a different page still has access to the context =
       {name.name}
       <div>
         <button onClick={() => navigate("/")}>Go to back</button>
