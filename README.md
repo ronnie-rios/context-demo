@@ -1,22 +1,35 @@
 # useContext Hook and Global State
 
 ## About Context
-- React context API is a way to manage state globally, it can be used with the `useState` hook to share state between deeply nested components more easily than with `useState` alone
-- state should be held by the highest parent component, in the stack that requires access to state
-- child components and nested components can access data **without props**, instead you can use the `useContext` hook and access the state object there. 
-- import `createContext` to start using it.
-- It's generally advised to make a separate folder and file that has this logic. a common naming convention is you will see is `<resource>Store.js`, or `<resource>Context.js`. 
+- React's Context API  allows you to manage and share state across components without the need to pass props manually through each level of the component tree. It provides a way to create a global state that can be accessed by any component within the application.
+- There are two main parts:
+  * Context Object: The context object is created using the `createContext()` function from the React package. It represents the shared state that you want to make available to other components. The context object holds the current state value and provides it to the consuming components.
+  * Provider Component: The provider component is responsible for providing the context values to its child components. It wraps a portion of the component tree where you want the context to be used. 
+- Folder Structure and Naming Convention: It's a good practice to organize your context-related files into a separate folder within your project. You can create a folder named contexts or stores to house your context files. As for naming conventions, using `<resource>Context.js` or `<resource>Store.js` is a common approach. For example, if your context manages user-related data, you can name it `UserContext.js` or `UserStore.js`. 
 
-### when to use?
+## Use Cases 
 
-- passing data that can be used in **any component in your application no matter where the component is in the component tree**
-    - theme data
-    - user data, i.e. a login token to keep track of authentication
-    - location data
-    - shopping cart
-- **Data placed in context should not be updated often**
+### When to use?
+React Context is useful when you have deeply nested components or when you want to share state between components that are not related.  
 
-## Setting up context
+passing data that can be used in **any component in your application no matter where the component is in the component tree**:
+  - theme data
+  - user authentication status, a token or user details
+  - location data
+  - shopping cart
+
+### When not to use?
+React context is awesome, do I still need props? It is awesome, but it's not the end-all solution. 
+
+Here are some examples:
+- Simple and Local State: If the state you need to manage is simple and limited to a specific component, just use `useState`
+- Performance: It's not designed for data that changes often, when frequent state changes occur, it re-renders all the components consuming the context. 
+- Small Number of Components: If you need to pass sate down a few levels, manually passing props is more straightforward than creating and maintaing a context provider and cosumer.
+- If you use React Context it can also reduce the reusability of components and lead to more complex and harder to maintain.
+
+Keep in mind the use cases for your app and what you need to accomplish. There are plenty more pros and cons for React Context.
+
+## Setting up Context
 
 ### Step 1 - creating the context
 
