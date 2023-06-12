@@ -1,7 +1,7 @@
 # useContext Hook and Global State
 
 ## About Context
-- React's Context API  allows you to manage and share state across components without the need to pass props manually through each level of the component tree. It provides a way to create a global state that can be accessed by any component within the application.
+- React's Context API  allows you to manage and share state across components without the need to pass props manually through each level of the component tree. It provides a way to create a global state object that can be accessed by any component within the application.
 - There are two main parts:
   * Context Object: The context object is created using the `createContext()` function from the React package. It represents the shared state that you want to make available to other components. The context object holds the current state value and provides it to the consuming components.
   * Provider Component: The provider component is responsible for providing the context values to its child components. It wraps a portion of the component tree where you want the context to be used. 
@@ -24,10 +24,10 @@ React context is awesome, do I still need props? It is awesome, but it's not the
 Here are some examples:
 - Simple and Local State: If the state you need to manage is simple and limited to a specific component, just use `useState`
 - Performance: It's not designed for data that changes often, when frequent state changes occur, it re-renders all the components consuming the context. 
-- Small Number of Components: If you need to pass sate down a few levels, manually passing props is more straightforward than creating and maintaining a context provider and cosumer.
-- If you use React Context it can also reduce the reusability of components and lead to more complex and harder to maintain.
+- Small Number of Components: If you need to pass state down a few levels, manually passing props is more straightforward than creating and maintaining a context provider and consumer.
+- If you use React Context it can also reduce the reusability of components and lead to more complex logic and harder to maintain codebase.
 
-Keep in mind the use cases for your app and what you need to accomplish. There are plenty more pros and cons for React Context.
+Keep in mind the use cases for your app and what you need to accomplish. There are plenty more examples of pros and cons for React Context.
 
 ## Setting up Context
 
@@ -35,7 +35,7 @@ Keep in mind the use cases for your app and what you need to accomplish. There a
 
 1. create context using the `createContext` function, pass in the data you want to be used as global state. In this instance, we have an object that has the data we will be manipulating, the `name`, and an empty function, called `setName`. 
 
-* Note: the reason for `setName: () => {}`, it's intially defined as an empty func in the context when created, but within the `DataProvider` we implement the a named function that will be set as the value to the `setName` func in the `Provider` we will create in the next step.
+* Note: the reason for `setName: () => {}`, it's intially defined as an empty function in the context when created, but within the `DataProvider` we implement the a named function that will be set as the value to the `setName` function in the `Provider` we will create in the next step.
 
 ```js
 //CONTEXT FILE
@@ -85,8 +85,8 @@ export { DataContext, DataProvider }
 ### More info on the `DataContext.Provider`:
 
 - The `name` property in the context value is used to hold the value of the data state.
-- The `setName` property in the context value is used to hold the reference to the `updateName` function. This function can be used by child components to update the global state object.
-- `children` refers to the child components that are wrapped within the `DataContext.Provider`. All child components will have access to the context and its values. We will see that in the next step.
+- The `setName` property in the context value is used to hold the reference to the `updateName` function. This function can be used by any of the child components to update the global state object.
+- `children` refers to the child components that are wrapped within the `DataContext.Provider`. All child components will have access to the context object and its values. We will see that in the next step.
 
 ## Step 3 - the provider in the App component
 
@@ -140,7 +140,7 @@ return (
 ```
 
 ## Step 5 - updating the global state
-- Import the context and `useContext` hook, we will also need the `useState` hook since our component will have an input
+- Import the context and `useContext` hook, we will also need the `useState` hook since our component will have an input.
 
 ```js
 import { useState } from "react";
@@ -187,7 +187,7 @@ This React projected was created with Vite. [Vite Docs](https://vitejs.dev/)
 If you have any questions, feedback, or suggestions, please feel free to reach out to me via email at ronniemarkrios@gmail.com. You can also open an issue on the project's repository on GitHub here. I had a lot of fun creating this project, writing about React Context, and explaining it to new developers
 
 
-##  Why the naming conventions? 
+##  Why certain naming conventions?
 - the data and variable names were written as generic as possible in the `context.jsx` file, feel free to name them around the data resource you would be using.
 -  The `Layer` components are named  to show you will have access to global state no matter where the component exists in the component tree.
 - I don't have any rhyme or reason why I set the intial value to `kangaroos`. 
