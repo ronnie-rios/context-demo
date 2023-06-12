@@ -5,12 +5,12 @@
 - There are two main parts:
   * Context Object: The context object is created using the `createContext()` function from the React package. It represents the shared state that you want to make available to other components. The context object holds the current state value and provides it to the consuming components.
   * Provider Component: The provider component is responsible for providing the context values to its child components. It wraps a portion of the component tree where you want the context to be used. 
-- Folder Structure and Naming Convention: A common practice is to organize your context-related files into a separate folder within your project. You can create a folder named contexts or stores to house your context files. As for naming conventions, using `<resource>Context.js` or `<resource>Store.js` is a common approach. For example, if your context manages user-related data, you can name it `UserContext.js` or `UserStore.js`. 
+- Folder Structure and Naming Convention: A common practice is to organize your context-related files into a separate folder within your project. You can create a folder named `context` or `store` to house your context files. As for naming conventions, using `<resource>Context.js` or `<resource>Store.js` is a common approach. For example, if your context manages user-related data, you can name it `UserContext.js` or `UserStore.js`. 
 
 ## Use Cases 
 
 ### When to use?
-React Context is useful when you have deeply nested components or when you want to share state between components that are not related.  
+React Context is useful when you have deeply nested components, or when you want to share state between components that are not related.  
 
 passing data that can be used in **any component in your application no matter where the component is in the component tree**:
   - theme data
@@ -19,13 +19,15 @@ passing data that can be used in **any component in your application no matter w
   - shopping cart
 
 ### When not to use?
-React context is awesome, do I still need props? It is awesome, but it's not the end-all solution. 
+React context is awesome, do I still need props? 
+- Yes, you will still use props.
+- It is awesome, but it's not the ultimate solution. 
 
 Here are some examples:
 - Simple and Local State: If the state you need to manage is simple and limited to a specific component, just use `useState`
-- Performance: It's not designed for data that changes often, when frequent state changes occur, it re-renders all the components consuming the context. 
+- Performance: It's not designed for data that changes often, when frequent state changes occur, it re-renders **all** the components consuming the context. 
 - Small Number of Components: If you need to pass state down a few levels, manually passing props is more straightforward than creating and maintaining a context provider and consumer.
-- If you use React Context it can also reduce the reusability of components and lead to more complex logic and harder to maintain codebase.
+- If you use React Context it can also reduce the reusability of components and lead to more complex logic and a harder to maintain codebase.
 
 Keep in mind the use cases for your app and what you need to accomplish. There are plenty more examples of pros and cons for React Context.
 
@@ -50,7 +52,7 @@ const DataContext = createContext({
 ```
 ## Step 2 - creating the provider
 
-2. Create a **PROVIDER**, it's a function that returns your `CONTEXT.PROVIDER`. put any value you like on your context provider using the `value` prop, make sure to wrap this `.PROVIDER` around the children
+2. Create a **PROVIDER**, it's a function that returns your `CONTEXT.PROVIDER`. Put any value you like on your context provider using the `value` prop, make sure to wrap this `.PROVIDER` around the children
 
 #### example from this repo:
 ```js
@@ -90,7 +92,7 @@ export { DataContext, DataProvider }
 
 ## Step 3 - the provider in the App component
 
-3. Take your created context and wrap the context provider around your component tree. this gives **ALL** the components and its children components, i.e. nested components will have access to the **GLOBAL STATE** Even if they are on different routes, the component as long as it's a child of the `<DataProvider>` component, will have access to the context.
+3. Take your created context provider and wrap the context provider around your component tree. This gives **ALL** the components and its children components, i.e. nested components, access to the **GLOBAL STATE** object. (The context object we created). Even if they are on different routes, the component, as long as it's a child of the `<DataProvider>` component, will have access to the context.
 
 ```js
 import Layer1 from './components/Layer1'
@@ -118,7 +120,7 @@ function App() {
 
 ## Step 4 - using the context
 
-4. Read that value within any component by using the ***the context hook***
+4. Read that value within any component by using the ***the context hook*** `useContext()`
 
 ```js
 //import it
