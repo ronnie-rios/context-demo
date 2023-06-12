@@ -5,7 +5,7 @@
 - There are two main parts:
   * Context Object: The context object is created using the `createContext()` function from the React package. It represents the shared state that you want to make available to other components. The context object holds the current state value and provides it to the consuming components.
   * Provider Component: The provider component is responsible for providing the context values to its child components. It wraps a portion of the component tree where you want the context to be used. 
-- Folder Structure and Naming Convention: It's a good practice to organize your context-related files into a separate folder within your project. You can create a folder named contexts or stores to house your context files. As for naming conventions, using `<resource>Context.js` or `<resource>Store.js` is a common approach. For example, if your context manages user-related data, you can name it `UserContext.js` or `UserStore.js`. 
+- Folder Structure and Naming Convention: A common practice is to organize your context-related files into a separate folder within your project. You can create a folder named contexts or stores to house your context files. As for naming conventions, using `<resource>Context.js` or `<resource>Store.js` is a common approach. For example, if your context manages user-related data, you can name it `UserContext.js` or `UserStore.js`. 
 
 ## Use Cases 
 
