@@ -10,12 +10,23 @@ const Layer1 = () => {
   const { name } = dataFromContext;
   console.log(name);
   const navigate = useNavigate()
-  // console.log(name,  'from layer1');
+ 
   return (
     <section>
-      Layer1 data from context = {name.name}
+       <p>This is a guide to help developers learn more about global state and the Context API in React.</p>
+          <p>To see the explanation, check out the <span className="text-sm text-gray-500 sm:text-center">
+          <a
+            href="https://github.com/ronnie-rios/context-demo"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:underline"
+          >
+            repository here.
+          </a></span></p>
+          <p>Each component is nested within another component. This is used to illustrate that with context, we can change the global state no matter where we are in the component tree.</p>
+      <h2>Layer 1: data from context = {name.name}</h2> 
       <div>
-        <button onClick={()=>navigate('/layer3')}>Go to layer3</button>
+        <button onClick={()=>navigate('/layer3')}>Go to a different page.</button>
       </div>
       <h3>Two components live on layer 2</h3>
       <Layer2neighbor />

@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./components/Footer";
 import Layer1 from "./components/Layer1";
 import Layer3 from "./components/Layer3";
 import { DataProvider } from "./context/context";
@@ -8,12 +9,13 @@ function App() {
     <>
       <DataProvider>
         <main>
-          <h1>Hi this is a context demo </h1>
-          <p>each component is nested within another component, with layer 4 being the most nested. This is used to illustrate that with context, we can change the global state no matter where we are in the component tree.</p>
+          <h1>Hi, this a React Context demo.</h1>
+         
           <Routes>
             <Route path="/" element={<Layer1 />} />
             <Route path="/layer3" element={<Layer3 />} />
           </Routes>
+          <Footer />
         </main>
       </DataProvider>
     </>

@@ -15,7 +15,7 @@ const Layer4 = () => {
 
   return (
     <div>
-      <h1>layer 4 will change the data</h1>
+      <h1>Layer 4 will change the data</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Change the global state!</label>

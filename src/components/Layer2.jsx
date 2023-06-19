@@ -8,8 +8,7 @@ const Layer2 = () => {
   const { name } = dataFromContext;
   return (
     <div>
-      
-      <p>Layer2 data from context = {name.name}</p>
+      <h2>Layer 2: data from context = {name.name}</h2> 
         <Layer4 />
     </div>
   )

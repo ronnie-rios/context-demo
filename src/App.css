@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+h1, h2, h2, h4, p {
+  padding: 1rem;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
